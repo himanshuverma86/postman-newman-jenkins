@@ -6,7 +6,7 @@
   "description": "project to rum postman test123",
  
   "scripts": {
-    "api-tests-production": "newman run Tests\Jsonplaceholdercollection.postman_collection.json"
+    "api-tests-production": "newman run Tests\\Jsonplaceholdercollection.postman_collection.json"
   },
   "author": "himanshu verma",
   "dependencies": {
