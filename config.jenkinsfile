@@ -12,11 +12,11 @@ checkout scm
 stage('Test'){
 steps {
 
-       sh 'npm install -f'
-       sh 'npm audit fix'
-       sh 'npm install newman'
+      // sh 'npm install -f'
+       //sh 'npm audit fix'
+       //sh 'npm install newman'
        sh 'npm install -S newman-reporter-htmlextra'
-       sh 'newman run Tests/Jsonplaceholdercollection.postman_collection.json --reporterscli,htmlextra --reporter-htmlextra-export "report/newman_result.html"  --insecure'
+       sh 'C:/Users/himanshu.verma/AppData/Roaming/npm/newman.cmd run Tests/Jsonplaceholdercollection.postman_collection.json --reporterscli,htmlextra --reporter-htmlextra-export "report/newman_result.html"  --insecure'
        
     publishHTML target: [
             allowMissing: false,
