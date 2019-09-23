@@ -16,9 +16,13 @@ steps {
        sh 'npm install -S newman-reporter-htmlextra'
        sh 'npm run "api-tests-production" --reporterscli,html,junit --reporter-htmlextra-export "report/newman_result.html" --reporter-junit-export "newman_result.xml" --insecure'
        
-   
-       publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'report', reportFiles: 'newman_result.html', reportName: 'NewmanhtmlTest']){
-    
-          }
+    publishHTML target: [
+            allowMissing: false,
+            alwaysLinkToLastBuild: false,
+            keepAll: false,
+            reportDir: 'report',
+            reportFiles: 'newman_result.html',
+            reportName: 'NewmanhtmlTest'
+    ]
 }
 }} }
