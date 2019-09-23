@@ -1,0 +1,24 @@
+pipeline {
+agent { label '' }
+parameters{
+string( name: "smokeTests", defaultValue: "", description: "to check the build" )
+}
+stages {
+stage ('Checkout') {
+steps {
+checkout scm
+}
+}
+stage('Test'){
+steps {
+ git 'https://github.com/himanshuverma86/postman-newman-jenkins.git'
+       sh 'npm install'
+       sh 'npm install -S newman-reporter-htmlextra'
+       sh 'npm run "api-tests-production" --reporterscli,html,junit --reporter-htmlextra-export "report/newman_result.html" --reporter-junit-export "newman_result.xml" --insecure'
+       
+   }
+       publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'report', reportFiles: 'newman_result.html', reportName: 'NewmanhtmlTest']){
+    
+          }
+}
+}
