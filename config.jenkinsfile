@@ -11,7 +11,7 @@ checkout scm
 }
 stage('Test'){
 steps {
- git 'https://github.com/himanshuverma86/postman-newman-jenkins.git'
+
        sh 'npm install'
        sh 'npm install -S newman-reporter-htmlextra'
        sh 'newman run "api-tests-production" --reporterscli,html,junit --reporter-htmlextra-export "report/newman_result.html" --reporter-junit-export "newman_result.xml" --insecure'
