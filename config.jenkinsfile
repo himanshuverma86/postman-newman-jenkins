@@ -12,10 +12,10 @@ checkout scm
 stage('Test'){
 steps {
 
-       sh 'npm install'
-       sh 'npm audit fix'
-       sh 'npm install -S newman-reporter-htmlextra'
-       sh 'newman run "api-tests-production" --reporterscli,html,junit --reporter-htmlextra-export "report/newman_result.html" --reporter-junit-export "newman_result.xml" --insecure'
+       //sh 'npm install'
+       //sh 'npm audit fix'
+      // sh 'npm install -S newman-reporter-htmlextra'
+       sh 'C:/Users/himanshu.verma/AppData/Roaming/npm/newman.cmd run "api-tests-production" --reporterscli,html,junit --reporter-htmlextra-export "report/newman_result.html" --reporter-junit-export "newman_result.xml" --insecure'
        
     publishHTML target: [
             allowMissing: false,
