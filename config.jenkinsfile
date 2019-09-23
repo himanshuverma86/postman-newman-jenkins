@@ -15,7 +15,7 @@ steps {
        //sh 'npm install'
        //sh 'npm audit fix'
       // sh 'npm install -S newman-reporter-htmlextra'
-       sh 'C:/Users/himanshu.verma/AppData/Roaming/npm/newman.cmd run "api-tests-production" --reporterscli,htmlextra --reporter-htmlextra-export "report/newman_result.html"  --insecure'
+       sh '"C:/Users/himanshu.verma/AppData/Roaming/npm/newman.cmd" run "api-tests-production" --reporterscli,htmlextra --reporter-htmlextra-export "report/newman_result.html"  --insecure'
        
     publishHTML target: [
             allowMissing: false,
