@@ -3,9 +3,9 @@ agent { label '' }
 parameters{
 string( name: "smokeTests", defaultValue: "", description: "to check the build" )
 }
-environment {
-PATH= "Users/himanshu.verma/AppData/Roaming/npm/node_modules/newman/bin"
-}
+//environment {
+//PATH= "Users/himanshu.verma/AppData/Roaming/npm/node_modules/newman/bin"
+//}
 stages {
 stage ('Checkout') {
 steps {
@@ -19,7 +19,7 @@ steps {
       //sh 'npm audit fix'
        //sh 'npm install newman'
       // sh 'npm install -S newman-reporter-htmlextra'
-       sh '$PATH run Tests/Jsonplaceholdercollection.postman_collection.json --reporters cli,htmlextra --reporter-htmlextra-export "report/newman_result.html"  --insecure'
+       sh C:/Users/himanshu.verma/AppData/Roaming/npm/newman.cmd run Tests/Jsonplaceholdercollection.postman_collection.json --reporters cli,htmlextra --reporter-htmlextra-export "report/newman_result.html"  --insecure'
        
     publishHTML target: [
             allowMissing: false,
