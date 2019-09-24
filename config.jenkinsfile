@@ -19,7 +19,7 @@ steps {
       //sh 'npm audit fix'
        //sh 'npm install newman'
       // sh 'npm install -S newman-reporter-htmlextra'
-       sh 'node.exe $WORKSPACE/pipeline postman/node_modules/newman/bin/newman.js run Tests/Jsonplaceholdercollection.postman_collection.json --reporters cli,htmlextra --reporter-htmlextra-export "report/newman_result.html"  --insecure'
+       sh 'node.exe $WORKSPACE/node_modules/newman/bin/newman.js run Tests/Jsonplaceholdercollection.postman_collection.json --reporters cli,htmlextra --reporter-htmlextra-export "report/newman_result.html"  --insecure'
        
     publishHTML target: [
             allowMissing: false,
