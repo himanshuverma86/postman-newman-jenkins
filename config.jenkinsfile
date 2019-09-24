@@ -4,7 +4,7 @@ parameters{
 string( name: "smokeTests", defaultValue: "", description: "to check the build" )
 }
 environment {
-PATH= C:/Users/himanshu.verma/AppData/Roaming/npm:$PATH newman -v
+PATH= Users/himanshu.verma/AppData/Roaming/npm/node_modules/newman/bin:$PATH newman -v
 }
 stages {
 stage ('Checkout') {
@@ -19,7 +19,7 @@ steps {
       //sh 'npm audit fix'
        //sh 'npm install newman'
       // sh 'npm install -S newman-reporter-htmlextra'
-       sh 'newman run Tests/Jsonplaceholdercollection.postman_collection.json --reporters cli,htmlextra --reporter-htmlextra-export "report/newman_result.html"  --insecure'
+       sh ' node newman run Tests/Jsonplaceholdercollection.postman_collection.json --reporters cli,htmlextra --reporter-htmlextra-export "report/newman_result.html"  --insecure'
        
     publishHTML target: [
             allowMissing: false,
