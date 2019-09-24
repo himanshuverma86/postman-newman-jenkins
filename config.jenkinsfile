@@ -15,7 +15,7 @@ checkout scm
 stage('Test'){
 steps {
 
-      sh 'npm install -f'
+      sh 'npm install'
       //sh 'npm audit fix'
        //sh 'npm install newman'
       // sh 'npm install -S newman-reporter-htmlextra'
