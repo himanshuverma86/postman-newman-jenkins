@@ -3,6 +3,9 @@ agent { label '' }
 parameters{
 string( name: "smokeTests", defaultValue: "", description: "to check the build" )
 }
+environment {
+PATH= C:\Users\himanshu.verma\AppData\Roaming\npm:$PATH newman -v
+}
 stages {
 stage ('Checkout') {
 steps {
